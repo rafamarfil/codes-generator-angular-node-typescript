@@ -14,7 +14,23 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "strictPropertyInitialization": false,
+    "paths": {
+      "@rvantravel/auth": ["libs/auth/src/index.ts"],
+      "@rvantravel/booking/feature/flight-search": [
+        "libs/booking/feature/flight-search/src/index.ts"
+      ],
+      "@rvantravel/booking/feature/shell": [
+        "libs/booking/feature/shell/src/index.ts"
+      ],
+      "@rvantravel/shared/pages": ["libs/shared/pages/src/index.ts"],
+      "@rvantravel/shared/root/assets": [
+        "libs/shared/root/assets/src/index.ts"
+      ],
+      "@rvantravel/shared/root/data-access": [
+        "libs/shared/root/data-access/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

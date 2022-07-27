@@ -2,7 +2,13 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "auth": "libs/auth",
+    "booking-feature-flight-search": "libs/booking/feature/flight-search",
+    "booking-feature-shell": "libs/booking/feature/shell",
     "booking-travel": "apps/booking-travel",
-    "booking-travel-e2e": "apps/booking-travel-e2e"
+    "booking-travel-e2e": "apps/booking-travel-e2e",
+    "shared-pages": "libs/shared/pages",
+    "shared-root-assets": "libs/shared/root/assets",
+    "shared-root-data-access": "libs/shared/root/data-access"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/shared/root/data-access/src",
+  "prefix": "rvantravel",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/root/data-access"],
+      "options": {
+        "jestConfig": "libs/shared/root/data-access/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/root/data-access/**/*.ts",
+          "libs/shared/root/data-access/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

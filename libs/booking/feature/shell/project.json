@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/booking/feature/shell/src",
+  "prefix": "rvantravel",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/booking/feature/shell"],
+      "options": {
+        "jestConfig": "libs/booking/feature/shell/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/booking/feature/shell/**/*.ts",
+          "libs/booking/feature/shell/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
