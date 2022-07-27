@@ -29,7 +29,8 @@
       ],
       "@rvantravel/shared/root/data-access": [
         "libs/shared/root/data-access/src/index.ts"
-      ]
+      ],
+      "@rvantravel/shell": ["libs/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

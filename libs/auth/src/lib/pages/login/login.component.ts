@@ -5,8 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { takeUntil, Subject } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-// import { DashboardComponent } from '@features/dashboard/dashboard.component';
-// import { AuthService } from '../../services/auth.service';
+import { BookingFeatureShellModule } from '@rvantravel/booking/feature/shell';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'rvantravel-login',
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   static path = () => ['login'];
 
   constructor(
-    // private authService: AuthService,
+    private authService: AuthService,
     public formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
@@ -61,33 +61,33 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loginUser(): void {
     this.loader = true;
-    // this.authService
-    //   .login(this.form.value)
-    //   .pipe(
-    //     takeUntil(this.destroy$),
-    //     finalize(() => (this.loader = false))
-    //   )
-    //   .subscribe({
-    //     next: (response) => {
-    //       // this.router.navigate(DashboardComponent.path(), {
-    //       //   queryParams: { loggedin: 'success' },
-    //       // });
-    //     },
-    //     error: (error) => {
-    //       console.log(error);
-    //       this.snackBar.open('Wrong user or password', '', {
-    //         duration: 3000,
-    //         horizontalPosition: 'right',
-    //         verticalPosition: 'bottom',
-    //       });
-    //     },
-    //   });
+    this.authService
+      .login(this.form.value)
+      .pipe(
+        takeUntil(this.destroy$),
+        finalize(() => (this.loader = false))
+      )
+      .subscribe({
+        next: (response) => {
+          this.router.navigate(['booking'], {
+            queryParams: { loggedin: 'success' },
+          });
+        },
+        error: (error) => {
+          console.log(error);
+          this.snackBar.open('Wrong user or password', '', {
+            duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'bottom',
+          });
+        },
+      });
   }
 
   private initForm() {
     this.form = this.formBuilder.group({
       email: [
-        '',
+        'niko@gmail.com',
         [
           Validators.required,
           Validators.email,
@@ -96,7 +96,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           ),
         ],
       ],
-      password: ['', Validators.required],
+      password: ['12345678', Validators.required],
     });
   }
 }

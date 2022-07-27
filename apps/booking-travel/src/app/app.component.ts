@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'rvantravel-root',
+  selector: 'rvantravel-app',
   template: `<router-outlet></router-outlet>`,
   styleUrls: ['./app.component.scss'],
 })
