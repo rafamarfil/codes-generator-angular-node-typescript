@@ -6,43 +6,53 @@ import { map } from 'rxjs/operators';
 // import { URI_LOCALHOST, USER_LOGIN, USER_REGISTER } from './http-consts';
 
 // const jwt = new JwtHelperService();
-class DecodedToken {
-  exp!: number;
-  username!: string;
-}
+
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
+import { LoginData } from '../models/login-data.interface';
+
+// class DecodedToken {
+//   exp!: number;
+//   username!: string;
+// }
 
 @Injectable({ providedIn: 'root' })
 export class AuthDataAccessServicesAuthService {
-  // private decodedToken;
+  constructor(private auth: AngularFireAuth) {}
 
-  constructor() {
-    // this.decodedToken =
-    //   JSON.parse(localStorage.getItem('auth_meta') as string) ||
-    //   new DecodedToken();
+  login({ email, password }: LoginData) {
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
 
-  public login(loginData: any): Observable<any> {
-    // const URL = URI_LOCALHOST + USER_LOGIN;
-
-    // return this.http.post(URL, loginData).pipe(
-    //   map((token) => {
-    //     return this.saveToken(token);
-    //   })
-    // );
-    return of(true);
+  register({ email, password }: LoginData) {
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  public register(userData: any): Observable<any> {
-    // const URL = URI_LOCALHOST + USER_REGISTER;
-    // return this.http.post(URL, userData);
-    return of(true);
+  logout() {
+    return this.auth.signOut();
   }
 
-  public logout(): void {
-    localStorage.removeItem('auth_tkn');
-    localStorage.removeItem('auth_meta');
-    // this.decodedToken = new DecodedToken();
-  }
+  // public login(loginData: any): Observable<any> {
+  // const URL = URI_LOCALHOST + USER_LOGIN;
+
+  // return this.http.post(URL, loginData).pipe(
+  //   map((token) => {
+  //     return this.saveToken(token);
+  //   })
+  // );
+  //   return of(true);
+  // }
+
+  // public register(userData: any): Observable<any> {
+  //   const URL = URI_LOCALHOST + USER_REGISTER;
+  //   return this.http.post(URL, userData);
+  // }
+
+  // public logout(): void {
+  //   localStorage.removeItem('auth_tkn');
+  //   localStorage.removeItem('auth_meta');
+  //   this.decodedToken = new DecodedToken();
+  // }
 
   // private saveToken(token: any): any {
   //   this.decodedToken = jwt.decodeToken(token);

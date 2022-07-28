@@ -62,36 +62,60 @@ export class AuthFeatureRegisterComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  register(): void {
+  registerUser() {
     this.loader = true;
     this.authService
-      .register(this.form.value)
-      .pipe(
-        takeUntil(this.destroy$),
-        finalize(() => (this.loader = false))
-      )
-      .subscribe({
-        next: () => {
-          this.router.navigate(['..'], {
-            relativeTo: this.route,
-            queryParams: { registered: 'success' },
-          });
-          this.snackBar.open(`User Registered! Now, you can login`, '', {
-            duration: 3000,
-            horizontalPosition: 'right',
-            verticalPosition: 'bottom',
-          });
-        },
-        error: (error) => {
-          console.log('error at component', error);
-          this.snackBar.open(`${error.message}`, '', {
-            duration: 3000,
-            horizontalPosition: 'right',
-            verticalPosition: 'bottom',
-          });
-        },
+      .login(this.form.value)
+      .then(() => {
+        this.router.navigate(['..'], {
+          relativeTo: this.route,
+        });
+        this.snackBar.open(`User Registered! Now, you can login`, '', {
+          duration: 3000,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom',
+        });
+      })
+      .catch((error) => {
+        console.log('error at component', error);
+        this.snackBar.open(`${error.message}`, '', {
+          duration: 3000,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom',
+        });
       });
   }
+
+  // register(): void {
+  //   this.loader = true;
+  //   this.authService
+  //     .register(this.form.value)
+  //     .pipe(
+  //       takeUntil(this.destroy$),
+  //       finalize(() => (this.loader = false))
+  //     )
+  //     .subscribe({
+  //       next: () => {
+  //         this.router.navigate(['..'], {
+  //           relativeTo: this.route,
+  //           queryParams: { registered: 'success' },
+  //         });
+  //         this.snackBar.open(`User Registered! Now, you can login`, '', {
+  //           duration: 3000,
+  //           horizontalPosition: 'right',
+  //           verticalPosition: 'bottom',
+  //         });
+  //       },
+  //       error: (error) => {
+  //         console.log('error at component', error);
+  //         this.snackBar.open(`${error.message}`, '', {
+  //           duration: 3000,
+  //           horizontalPosition: 'right',
+  //           verticalPosition: 'bottom',
+  //         });
+  //       },
+  //     });
+  // }
 
   private initForm() {
     this.form = this.formBuilder.group(

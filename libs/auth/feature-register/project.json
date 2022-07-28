@@ -21,5 +21,8 @@
       }
     }
   },
-  "tags": ["scope:auth", "type:feature"]
+  "tags": [
+    "scope:auth",
+    "type:feature"
+  ]
 }

@@ -97,8 +97,7 @@
     }
   },
   "tags": [
-    "scope:booking",
-    "type:app"
+    "scope:app"
   ],
   "implicitDependencies": [
     "shared-root-assets",

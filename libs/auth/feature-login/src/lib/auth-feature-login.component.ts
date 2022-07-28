@@ -58,30 +58,45 @@ export class AuthFeatureLoginComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  loginUser(): void {
+  loginUser() {
     this.loader = true;
     this.authService
       .login(this.form.value)
-      .pipe(
-        takeUntil(this.destroy$),
-        finalize(() => (this.loader = false))
-      )
-      .subscribe({
-        next: (response) => {
-          this.router.navigate(['booking'], {
-            queryParams: { loggedin: 'success' },
-          });
-        },
-        error: (error) => {
-          console.log(error);
-          this.snackBar.open('Wrong user or password', '', {
-            duration: 3000,
-            horizontalPosition: 'right',
-            verticalPosition: 'bottom',
-          });
-        },
+      .then(() => this.router.navigate(['/booking']))
+      .catch((error) => {
+        console.log(error);
+        this.snackBar.open('Wrong user or password', '', {
+          duration: 3000,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom',
+        });
       });
   }
+
+  // loginUser(): void {
+  //   this.loader = true;
+  //   this.authService
+  //     .login(this.form.value)
+  //     .pipe(
+  //       takeUntil(this.destroy$),
+  //       finalize(() => (this.loader = false))
+  //     )
+  //     .subscribe({
+  //       next: (response) => {
+  //         this.router.navigate(['booking'], {
+  //           queryParams: { loggedin: 'success' },
+  //         });
+  //       },
+  //       error: (error) => {
+  //         console.log(error);
+  //         this.snackBar.open('Wrong user or password', '', {
+  //           duration: 3000,
+  //           horizontalPosition: 'right',
+  //           verticalPosition: 'bottom',
+  //         });
+  //       },
+  //     });
+  // }
 
   private initForm() {
     this.form = this.formBuilder.group({

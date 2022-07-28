@@ -22,6 +22,13 @@ const AuthFeatureShellRoutes: Routes = [
             (m) => m.AuthFeatureLoginModule
           ),
       },
+      {
+        path: 'register',
+        loadChildren: () =>
+          import('@rvantravel/auth/feature-register').then(
+            (m) => m.AuthFeatureRegisterModule
+          ),
+      },
     ],
   },
 ];

@@ -13,15 +13,6 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "type:app",
-                "onlyDependOnLibsWithTags": [
-                  "type:assets",
-                  "type:shell",
-                  "type:styles"
-
-                ]
-              },
-              {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
                   "scope:shared",
@@ -50,6 +41,14 @@
                 "sourceTag": "type:util",
                 "onlyDependOnLibsWithTags": [
                   "type:util"
+                ]
+              },
+              {
+                "sourceTag": "scope:app",
+                "onlyDependOnLibsWithTags": [
+                  "scope:shell",
+                  "type:assets",
+                  "type:styles"
                 ]
               },
               {

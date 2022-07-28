@@ -4,6 +4,14 @@
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyBtW0xA3DdEASrICQ-R5gAzEOIgoRgYR7w',
+    authDomain: 'fireauth-434eb.firebaseapp.com',
+    projectId: 'fireauth-434eb',
+    storageBucket: 'fireauth-434eb.appspot.com',
+    messagingSenderId: '404890148920',
+    appId: '1:404890148920:web:e6a5bf3a13a5c5828906cd',
+  },
 };
 
 /*

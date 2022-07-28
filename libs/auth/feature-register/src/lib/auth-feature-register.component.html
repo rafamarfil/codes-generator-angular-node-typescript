@@ -4,7 +4,7 @@
 
 <div class="title">SIGN UP</div>
 
-<form [formGroup]="form" (ngSubmit)="form.valid && register()">
+<form [formGroup]="form" (ngSubmit)="form.valid && registerUser()">
   <fieldset [disabled]="loader">
     <mat-form-field appearance="outline">
       <mat-label>Username</mat-label>
