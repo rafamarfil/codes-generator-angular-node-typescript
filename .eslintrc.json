@@ -13,31 +13,65 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              },
-              {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": [
                   "type:assets",
-                  "type:environments",
                   "type:shell",
                   "type:styles"
+
                 ]
               },
               {
-                "sourceTag": "domain:booking",
+                "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
-                  "domain:booking",
-                  "domain:shared"
+                  "scope:shared",
+                  "type:ui",
+                  "type:util",
+                  "type:feature",
+                  "type:data-access"
                 ]
               },
               {
                 "sourceTag": "type:data-access",
                 "onlyDependOnLibsWithTags": [
                   "type:data-access",
-                  "type:environments",
                   "type:util"
+                ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:util",
+                  "type:core-libraries"
+                ]
+              },
+              {
+                "sourceTag": "type:util",
+                "onlyDependOnLibsWithTags": [
+                  "type:util"
+                ]
+              },
+              {
+                "sourceTag": "scope:booking",
+                "onlyDependOnLibsWithTags": [
+                  "scope:booking",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:auth",
+                "onlyDependOnLibsWithTags": [
+                  "scope:auth",
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:shell",
+                "onlyDependOnLibsWithTags": [
+                  "scope:shell",
+                  "scope:shared",
+                  "type:feature"
                 ]
               }
             ]

@@ -16,19 +16,33 @@
     "baseUrl": ".",
     "strictPropertyInitialization": false,
     "paths": {
-      "@rvantravel/auth": ["libs/auth/src/index.ts"],
+      "@rvantravel/auth/data-access": ["libs/auth/data-access/src/index.ts"],
+      "@rvantravel/auth/feature-login": [
+        "libs/auth/feature-login/src/index.ts"
+      ],
+      "@rvantravel/auth/feature-register": [
+        "libs/auth/feature-register/src/index.ts"
+      ],
+      "@rvantravel/auth/feature-shell": [
+        "libs/auth/feature-shell/src/index.ts"
+      ],
       "@rvantravel/booking/feature/flight-search": [
         "libs/booking/feature/flight-search/src/index.ts"
       ],
       "@rvantravel/booking/feature/shell": [
         "libs/booking/feature/shell/src/index.ts"
       ],
-      "@rvantravel/shared/pages": ["libs/shared/pages/src/index.ts"],
       "@rvantravel/shared/root/assets": [
         "libs/shared/root/assets/src/index.ts"
       ],
       "@rvantravel/shared/root/data-access": [
         "libs/shared/root/data-access/src/index.ts"
+      ],
+      "@rvantravel/shared/root/styles": [
+        "libs/shared/root/styles/src/index.ts"
+      ],
+      "@rvantravel/shared/ui/page-not-found": [
+        "libs/shared/ui/page-not-found/src/index.ts"
       ],
       "@rvantravel/shell": ["libs/shell/src/index.ts"]
     }

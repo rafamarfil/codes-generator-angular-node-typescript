@@ -96,5 +96,13 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    "scope:booking",
+    "type:app"
+  ],
+  "implicitDependencies": [
+    "shared-root-assets",
+    "shared-root-data-access",
+    "shared-root-styles"
+  ]
 }

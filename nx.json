@@ -18,20 +18,13 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ]
+      "dependsOn": ["^build"]
     }
   },
   "generators": {
@@ -47,32 +40,6 @@
     },
     "@nrwl/angular:component": {
       "style": "scss"
-    }
-  },
-  "projects": {
-    "booking-travel": {
-      "tags": [
-        "domain:booking",
-        "type:app"
-      ],
-      "implicitDependencies": [
-        "shared-root-assets",
-        "shared-root-styles"
-      ]
-    },
-    "auth": {
-      "tags": [
-        "domain:auth",
-        "scope:auth",
-        "type:data-access"
-      ]
-    },
-    "booking-data-access": {
-      "tags": [
-        "domain:booking",
-        "scope:booking",
-        "type:data-access"
-      ]
     }
   },
   "defaultProject": "booking-travel"

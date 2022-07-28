@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedPagesNotFoundComponent } from '@rvantravel/shared/pages';
-
 const ShellRoutes: Routes = [
   {
     path: '',
@@ -11,7 +9,10 @@ const ShellRoutes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('@rvantravel/auth').then((m) => m.AuthModule),
+    loadChildren: () =>
+      import('@rvantravel/auth/feature-shell').then(
+        (m) => m.AuthFeatureShellModule
+      ),
   },
   {
     path: 'booking',
@@ -22,7 +23,10 @@ const ShellRoutes: Routes = [
   },
   {
     path: 'not-found',
-    component: SharedPagesNotFoundComponent,
+    loadChildren: () =>
+      import('@rvantravel/shared/ui/page-not-found').then(
+        (m) => m.SharedUiPageNotFoundModule
+      ),
   },
   {
     path: '**',

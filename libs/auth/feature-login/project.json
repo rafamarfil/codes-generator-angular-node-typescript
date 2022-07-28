@@ -1,13 +1,13 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/shared/root/assets/src",
+  "sourceRoot": "libs/auth/feature-login/src",
   "prefix": "rvantravel",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/root/assets"],
+      "outputs": ["coverage/libs/auth/feature-login"],
       "options": {
-        "jestConfig": "libs/shared/root/assets/jest.config.ts",
+        "jestConfig": "libs/auth/feature-login/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -15,11 +15,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/root/assets/**/*.ts",
-          "libs/shared/root/assets/**/*.html"
+          "libs/auth/feature-login/**/*.ts",
+          "libs/auth/feature-login/**/*.html"
         ]
       }
     }
   },
-  "tags": ["scope:shared", "type:assets"]
+  "tags": ["scope:auth", "type:feature"]
 }
