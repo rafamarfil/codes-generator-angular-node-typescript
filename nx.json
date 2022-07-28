@@ -49,5 +49,31 @@
       "style": "scss"
     }
   },
+  "projects": {
+    "booking-travel": {
+      "tags": [
+        "domain:booking",
+        "type:app"
+      ],
+      "implicitDependencies": [
+        "shared-root-assets",
+        "shared-root-styles"
+      ]
+    },
+    "auth": {
+      "tags": [
+        "domain:auth",
+        "scope:auth",
+        "type:data-access"
+      ]
+    },
+    "booking-data-access": {
+      "tags": [
+        "domain:booking",
+        "scope:booking",
+        "type:data-access"
+      ]
+    }
+  },
   "defaultProject": "booking-travel"
 }

@@ -5,5 +5,7 @@ import { SharedPagesNotFoundComponent } from './not-found/shared-pages-not-found
 @NgModule({
   imports: [],
   declarations: [SharedPagesNotFoundComponent],
+  exports: [SharedPagesNotFoundComponent],
 })
-export class SharedPagesModule {}
+export class SharedPagesModule {
+}

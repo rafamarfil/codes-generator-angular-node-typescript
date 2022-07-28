@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SharedPagesNotFoundComponent } from '@rvantravel/shared/pages';
+
 const ShellRoutes: Routes = [
   {
     path: '',
@@ -18,14 +20,14 @@ const ShellRoutes: Routes = [
         (m) => m.BookingFeatureShellModule
       ),
   },
-  // {
-  //   path: 'not-found',
-  //   component: NotFoundComponent,
-  // },
-  // {
-  //   path: '**',
-  //   redirectTo: 'not-found',
-  // },
+  {
+    path: 'not-found',
+    component: SharedPagesNotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+  },
 ];
 
 @NgModule({
