@@ -10,7 +10,7 @@ const ShellRoutes: Routes = [
   {
     path: 'auth',
     loadChildren: () =>
-      import('@rvantravel/auth/feature-shell').then(
+      import('libs/auth/feature/shell/src').then(
         (m) => m.AuthFeatureShellModule
       ),
   },
