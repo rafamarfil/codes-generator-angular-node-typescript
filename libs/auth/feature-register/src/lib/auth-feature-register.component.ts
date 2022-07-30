@@ -11,10 +11,8 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Subject } from 'rxjs';
-import { finalize, takeUntil } from 'rxjs/operators';
 
 import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access';
 
@@ -48,7 +46,6 @@ export class AuthFeatureRegisterComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthDataAccessServicesAuthService,
     public formBuilder: FormBuilder,
-    public snackBar: MatSnackBar,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -64,63 +61,17 @@ export class AuthFeatureRegisterComponent implements OnInit, OnDestroy {
 
   registerUser() {
     this.loader = true;
-    this.authService
-      .login(this.form.value)
-      .then(() => {
-        this.router.navigate(['..'], {
-          relativeTo: this.route,
-        });
-        this.snackBar.open(`User Registered! Now, you can login`, '', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'bottom',
-        });
-      })
-      .catch((error) => {
-        console.log('error at component', error);
-        this.snackBar.open(`${error.message}`, '', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'bottom',
-        });
-      });
+    this.authService.register(this.form.value);
   }
 
-  // register(): void {
-  //   this.loader = true;
-  //   this.authService
-  //     .register(this.form.value)
-  //     .pipe(
-  //       takeUntil(this.destroy$),
-  //       finalize(() => (this.loader = false))
-  //     )
-  //     .subscribe({
-  //       next: () => {
-  //         this.router.navigate(['..'], {
-  //           relativeTo: this.route,
-  //           queryParams: { registered: 'success' },
-  //         });
-  //         this.snackBar.open(`User Registered! Now, you can login`, '', {
-  //           duration: 3000,
-  //           horizontalPosition: 'right',
-  //           verticalPosition: 'bottom',
-  //         });
-  //       },
-  //       error: (error) => {
-  //         console.log('error at component', error);
-  //         this.snackBar.open(`${error.message}`, '', {
-  //           duration: 3000,
-  //           horizontalPosition: 'right',
-  //           verticalPosition: 'bottom',
-  //         });
-  //       },
-  //     });
-  // }
+  googleAuth() {
+    this.authService.googleAuth();
+  }
 
   private initForm() {
     this.form = this.formBuilder.group(
       {
-        username: ['', [Validators.required]],
+        // username: ['', [Validators.required]],
         email: [
           '',
           [

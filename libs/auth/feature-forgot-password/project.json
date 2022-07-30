@@ -1,13 +1,13 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/auth/feature-login/src",
+  "sourceRoot": "libs/auth/feature-forgot-password/src",
   "prefix": "rvantravel",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/auth/feature-login"],
+      "outputs": ["coverage/libs/auth/feature-forgot-password"],
       "options": {
-        "jestConfig": "libs/auth/feature-login/jest.config.ts",
+        "jestConfig": "libs/auth/feature-forgot-password/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -15,8 +15,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/auth/feature-login/**/*.ts",
-          "libs/auth/feature-login/**/*.html"
+          "libs/auth/feature-forgot-password/**/*.ts",
+          "libs/auth/feature-forgot-password/**/*.html"
         ]
       }
     }

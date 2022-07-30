@@ -6,7 +6,7 @@
 
 <form [formGroup]="form" (ngSubmit)="form.valid && registerUser()">
   <fieldset [disabled]="loader">
-    <mat-form-field appearance="outline">
+    <!-- <mat-form-field appearance="outline">
       <mat-label>Username</mat-label>
       <input
         matInput
@@ -20,7 +20,7 @@
       >
         Username is required
       </mat-error>
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input
@@ -122,6 +122,20 @@
       color="primary"
     >
       CREATE YOUR ACCOUNT
+    </button>
+
+    <div class="formGroup">
+      <span class="or"><span class="orInner">Or</span></span>
+    </div>
+
+    <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="googleAuth()"
+    >
+      <i class=""></i>
+      Continue with Google
     </button>
   </fieldset>
 </form>

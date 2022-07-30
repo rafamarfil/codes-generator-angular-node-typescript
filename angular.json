@@ -3,9 +3,11 @@
   "version": 2,
   "projects": {
     "auth-data-access": "libs/auth/data-access",
+    "auth-feature-forgot-password": "libs/auth/feature-forgot-password",
     "auth-feature-login": "libs/auth/feature-login",
     "auth-feature-register": "libs/auth/feature-register",
     "auth-feature-shell": "libs/auth/feature-shell",
+    "auth-feature-verify-email": "libs/auth/feature-verify-email",
     "booking-feature-flight-search": "libs/booking/feature/flight-search",
     "booking-feature-shell": "libs/booking/feature/shell",
     "booking-travel": "apps/booking-travel",

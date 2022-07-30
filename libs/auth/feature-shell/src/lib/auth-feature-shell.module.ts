@@ -29,6 +29,20 @@ const AuthFeatureShellRoutes: Routes = [
             (m) => m.AuthFeatureRegisterModule
           ),
       },
+      {
+        path: 'forgot-password',
+        loadChildren: () =>
+          import('@rvantravel/auth/feature-forgot-password').then(
+            (m) => m.AuthFeatureForgotPasswordModule
+          ),
+      },
+      {
+        path: 'verify-email-address',
+        loadChildren: () =>
+          import('@rvantravel/auth/feature-verify-email').then(
+            (m) => m.AuthFeatureVerifyEmailModule
+          ),
+      },
     ],
   },
 ];

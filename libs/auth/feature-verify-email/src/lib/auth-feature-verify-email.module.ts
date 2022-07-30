@@ -3,21 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
 import { AuthDataAccessModule } from '@rvantravel/auth/data-access';
-import { AuthFeatureLoginComponent } from './auth-feature-login.component';
+import { AuthFeatureVerifyEmailComponent } from './auth-feature-verify-email.component';
 
-const AuthFeatureLoginRoutes: Routes = [
+const AuthFeatureVerifyEmailRoutes: Routes = [
   {
     path: '',
-    component: AuthFeatureLoginComponent,
+    component: AuthFeatureVerifyEmailComponent,
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(AuthFeatureLoginRoutes),
+    RouterModule.forChild(AuthFeatureVerifyEmailRoutes),
     SharedRootDataAccessModule,
     AuthDataAccessModule,
   ],
-  declarations: [AuthFeatureLoginComponent],
+  declarations: [AuthFeatureVerifyEmailComponent],
 })
-export class AuthFeatureLoginModule {}
+export class AuthFeatureVerifyEmailModule {}

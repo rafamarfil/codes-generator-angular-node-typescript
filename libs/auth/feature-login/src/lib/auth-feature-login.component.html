@@ -49,6 +49,22 @@
     <button type="submit" [disabled]="loader" mat-raised-button color="primary">
       SIGN IN
     </button>
+
+    <div>Or</div>
+
+    <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="googleAuth()"
+    >
+      <i class=""></i>
+      Log in with Google
+    </button>
+
+    <div class="forgot-password">
+      <span routerLink="/auth/forgot-password">Forgot Password?</span>
+    </div>
   </fieldset>
 </form>
 

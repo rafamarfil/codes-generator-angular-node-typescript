@@ -17,6 +17,9 @@
     "strictPropertyInitialization": false,
     "paths": {
       "@rvantravel/auth/data-access": ["libs/auth/data-access/src/index.ts"],
+      "@rvantravel/auth/feature-forgot-password": [
+        "libs/auth/feature-forgot-password/src/index.ts"
+      ],
       "@rvantravel/auth/feature-login": [
         "libs/auth/feature-login/src/index.ts"
       ],
@@ -25,6 +28,9 @@
       ],
       "@rvantravel/auth/feature-shell": [
         "libs/auth/feature-shell/src/index.ts"
+      ],
+      "@rvantravel/auth/feature-verify-email": [
+        "libs/auth/feature-verify-email/src/index.ts"
       ],
       "@rvantravel/booking/feature/flight-search": [
         "libs/booking/feature/flight-search/src/index.ts"
