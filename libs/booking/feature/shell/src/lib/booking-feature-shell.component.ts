@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'rvantravel-shell',
+  selector: 'rvantravel-booking-shell',
   templateUrl: 'booking-feature-shell.component.html',
   styleUrls: ['./booking-feature-shell.component.scss'],
 })
-export class BookingFeatureShellComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class BookingFeatureShellComponent {}

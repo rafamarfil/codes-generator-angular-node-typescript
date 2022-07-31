@@ -10,11 +10,6 @@ const BookingFeatureShellRoutes: Routes = [
     children: [
       {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'flight-search',
-      },
-      {
-        path: 'flight-search',
         loadChildren: () =>
           import('@rvantravel/booking/feature/flight-search').then(
             (module) => module.BookingFeatureFlightSearchModule
