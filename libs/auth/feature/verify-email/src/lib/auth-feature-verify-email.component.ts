@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access';
 
@@ -7,10 +7,8 @@ import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access'
   templateUrl: './auth-feature-verify-email.component.html',
   styleUrls: ['./auth-feature-verify-email.component.scss'],
 })
-export class AuthFeatureVerifyEmailComponent implements OnInit {
+export class AuthFeatureVerifyEmailComponent {
   constructor(public authService: AuthDataAccessServicesAuthService) {}
-
-  ngOnInit() {}
 
   sendVerificationMail() {
     this.authService.sendVerificationMail();

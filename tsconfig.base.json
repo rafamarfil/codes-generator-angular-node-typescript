@@ -14,7 +14,6 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "strictPropertyInitialization": false,
     "paths": {
       "@rvantravel/auth/data-access": ["libs/auth/data-access/src/index.ts"],
       "@rvantravel/auth/feature/forgot-password": [
@@ -43,6 +42,9 @@
       ],
       "@rvantravel/shared/root/data-access": [
         "libs/shared/root/data-access/src/index.ts"
+      ],
+      "@rvantravel/shared/root/guard/auth": [
+        "libs/shared/root/guard/auth/src/index.ts"
       ],
       "@rvantravel/shared/root/styles": [
         "libs/shared/root/styles/src/index.ts"

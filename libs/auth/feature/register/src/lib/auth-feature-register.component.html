@@ -6,21 +6,6 @@
 
 <form [formGroup]="form" (ngSubmit)="form.valid && registerUser()">
   <fieldset [disabled]="loader">
-    <!-- <mat-form-field appearance="outline">
-      <mat-label>Username</mat-label>
-      <input
-        matInput
-        type="text"
-        placeholder="Username"
-        formControlName="username"
-      />
-      <mat-error
-        *ngIf="form.controls['username'].hasError('required')"
-        class="form-control-feedback"
-      >
-        Username is required
-      </mat-error>
-    </mat-form-field> -->
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <input
@@ -123,10 +108,6 @@
     >
       CREATE YOUR ACCOUNT
     </button>
-
-    <div class="formGroup">
-      <span class="or"><span class="orInner">Or</span></span>
-    </div>
 
     <button
       type="button"

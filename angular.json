@@ -14,6 +14,7 @@
     "booking-travel-e2e": "apps/booking-travel-e2e",
     "shared-root-assets": "libs/shared/root/assets",
     "shared-root-data-access": "libs/shared/root/data-access",
+    "shared-root-guard-auth": "libs/shared/root/guard/auth",
     "shared-root-styles": "libs/shared/root/styles",
     "shared-ui-page-not-found": "libs/shared/ui/page-not-found",
     "shell": "libs/shell"

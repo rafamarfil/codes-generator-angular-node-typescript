@@ -23,33 +23,11 @@ export class AuthFeatureLoginComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
-    this.route.queryParams.subscribe((params) => {
-      const key1 = 'registered';
-      const key2 = 'loggedOut';
-      if (params[key1] === 'success') {
-        // this.snackBar.open(
-        //   'You have been successfully registered. Please Log in',
-        //   '',
-        //   {
-        //     duration: 3000,
-        //     horizontalPosition: 'right',
-        //     verticalPosition: 'bottom',
-        //   }
-        // );
-      }
-      if (params[key2] === 'success') {
-        // this.snackBar.open('You have been loggedout successfully', '', {
-        //   duration: 3000,
-        //   horizontalPosition: 'right',
-        //   verticalPosition: 'bottom',
-        // });
-      }
-    });
   }
 
   loginUser() {
     this.loader = true;
-    this.authService.login(this.form.value);
+    this.authService.login(this.form.value).then(() => (this.loader = false));
   }
 
   googleAuth() {
@@ -59,7 +37,7 @@ export class AuthFeatureLoginComponent implements OnInit {
   private initForm() {
     this.form = this.formBuilder.group({
       email: [
-        'paco@gmail.com',
+        'rvantravel@gmail.com',
         [
           Validators.required,
           Validators.email,
@@ -68,7 +46,7 @@ export class AuthFeatureLoginComponent implements OnInit {
           ),
         ],
       ],
-      password: ['12345678', Validators.required],
+      password: ['78Rafalote82#', Validators.required],
     });
   }
 }

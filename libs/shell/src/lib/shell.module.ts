@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import {
+  SharedRootGuardAuthGuard,
+  SharedRootGuardAuthModule,
+} from '@rvantravel/shared/root/guard/auth';
+
 const ShellRoutes: Routes = [
   {
     path: '',
@@ -10,7 +15,7 @@ const ShellRoutes: Routes = [
   {
     path: 'auth',
     loadChildren: () =>
-      import('libs/auth/feature/shell/src').then(
+      import('@rvantravel/auth/feature/shell').then(
         (m) => m.AuthFeatureShellModule
       ),
   },
@@ -20,6 +25,7 @@ const ShellRoutes: Routes = [
       import('@rvantravel/booking/feature/shell').then(
         (m) => m.BookingFeatureShellModule
       ),
+    canLoad: [SharedRootGuardAuthGuard],
   },
   {
     path: 'not-found',
@@ -35,6 +41,7 @@ const ShellRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(ShellRoutes)],
+  imports: [RouterModule.forRoot(ShellRoutes), SharedRootGuardAuthModule],
+  providers: [],
 })
 export class ShellModule {}

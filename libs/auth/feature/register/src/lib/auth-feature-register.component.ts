@@ -61,7 +61,9 @@ export class AuthFeatureRegisterComponent implements OnInit, OnDestroy {
 
   registerUser() {
     this.loader = true;
-    this.authService.register(this.form.value);
+    this.authService
+      .register(this.form.value)
+      .then(() => (this.loader = false));
   }
 
   googleAuth() {
@@ -71,7 +73,6 @@ export class AuthFeatureRegisterComponent implements OnInit, OnDestroy {
   private initForm() {
     this.form = this.formBuilder.group(
       {
-        // username: ['', [Validators.required]],
         email: [
           '',
           [

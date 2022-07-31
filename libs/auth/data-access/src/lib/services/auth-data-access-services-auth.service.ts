@@ -39,7 +39,18 @@ export class AuthDataAccessServicesAuthService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
-    return user !== null && user.emailVerified !== false ? true : false;
+    if (user && !user.emailVerified) {
+      this.snackBar.open(
+        'Your email not verified yet, please check your inbox and confirm',
+        'x',
+        {
+          duration: 5000,
+          horizontalPosition: 'right',
+          verticalPosition: 'bottom',
+        }
+      );
+    }
+    return !!(user && user.emailVerified);
   }
 
   login({ email, password }: LoginData) {
@@ -51,21 +62,20 @@ export class AuthDataAccessServicesAuthService {
           this.router.navigate(['booking']);
         });
         this.setUserData(response.user);
-        // this.saveToken(token);
       })
       .catch((error) => {
         console.log(error);
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === 'auth/wrong-password') {
-          this.snackBar.open('Wrong password', '', {
-            duration: 3000,
+          this.snackBar.open('Wrong password', 'x', {
+            duration: 5000,
             horizontalPosition: 'right',
             verticalPosition: 'bottom',
           });
         } else if (errorCode === 'auth/user-not-found') {
-          this.snackBar.open('Wrong user', '', {
-            duration: 3000,
+          this.snackBar.open('Wrong user', 'x', {
+            duration: 5000,
             horizontalPosition: 'right',
             verticalPosition: 'bottom',
           });
@@ -89,11 +99,8 @@ export class AuthDataAccessServicesAuthService {
       .then((response) => {
         this.sendVerificationMail();
         this.setUserData(response.user);
-        // this.router.navigate(['..'], {
-        //   relativeTo: this.route,
-        // });
-        this.snackBar.open(`User Registered! Now, you can login`, '', {
-          duration: 3000,
+        this.snackBar.open(`User Registered! Now, you can login`, 'x', {
+          duration: 5000,
           horizontalPosition: 'right',
           verticalPosition: 'bottom',
         });
@@ -114,11 +121,15 @@ export class AuthDataAccessServicesAuthService {
     return this.auth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        this.snackBar.open(`Password reset email sent, check your inbox.`, '', {
-          duration: 3000,
-          horizontalPosition: 'right',
-          verticalPosition: 'bottom',
-        });
+        this.snackBar.open(
+          `Password reset email sent, check your inbox.`,
+          'x',
+          {
+            duration: 5000,
+            horizontalPosition: 'right',
+            verticalPosition: 'bottom',
+          }
+        );
       })
       .catch((error) => {
         console.log(error);
@@ -161,9 +172,5 @@ export class AuthDataAccessServicesAuthService {
       .catch((error) => {
         console.log(error);
       });
-  }
-
-  private saveToken(token: string) {
-    localStorage.setItem('auth_token', token);
   }
 }
