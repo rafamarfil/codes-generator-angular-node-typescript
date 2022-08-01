@@ -99,8 +99,5 @@
   "tags": [
     "scope:app"
   ],
-  "implicitDependencies": [
-    "shared-root-assets",
-    "shared-root-styles"
-  ]
+  "implicitDependencies": []
 }

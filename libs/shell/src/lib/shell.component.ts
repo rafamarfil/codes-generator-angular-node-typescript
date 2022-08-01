@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access';
 
 @Component({
   selector: 'rvantravel-booking',
   templateUrl: './shell.component.html',
 })
-export class ShellComponent implements OnInit {
-  constructor() {}
+export class ShellComponent {
+  constructor(private authService: AuthDataAccessServicesAuthService) {}
 
-  ngOnInit() {}
+  onLogout(event: boolean) {
+    if (event) {
+      this.authService.logOut();
+    }
+  }
 }

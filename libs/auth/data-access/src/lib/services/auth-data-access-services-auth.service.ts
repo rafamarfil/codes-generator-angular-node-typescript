@@ -58,9 +58,9 @@ export class AuthDataAccessServicesAuthService {
       .signInWithEmailAndPassword(email, password)
       .then((response: any) => {
         console.log(response);
-        this.ngZone.run(() => {
-          this.router.navigate(['booking']);
-        });
+        this.router.navigate(['booking']);
+        // this.ngZone.run(() => {
+        // });
         this.setUserData(response.user);
       })
       .catch((error) => {

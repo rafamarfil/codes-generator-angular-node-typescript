@@ -6,6 +6,8 @@ import {
   SharedRootGuardAuthGuard,
   SharedRootGuardAuthModule,
 } from '@rvantravel/shared/root/guard/auth';
+import { SharedUiNavbarModule } from '@rvantravel/shared/ui/navbar';
+
 import { ShellComponent } from './shell.component';
 
 const ShellRoutes: Routes = [
@@ -58,6 +60,7 @@ const ShellRoutes: Routes = [
     RouterModule.forRoot(ShellRoutes),
     SharedRootDataAccessModule,
     SharedRootGuardAuthModule,
+    SharedUiNavbarModule,
   ],
   declarations: [ShellComponent],
 })

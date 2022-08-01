@@ -41,7 +41,7 @@
                 "onlyDependOnLibsWithTags": [
                   "type:ui",
                   "type:util",
-                  "type:core-libraries"
+                  "type:core"
                 ]
               },
               {
@@ -53,9 +53,7 @@
               {
                 "sourceTag": "scope:app",
                 "onlyDependOnLibsWithTags": [
-                  "scope:shell",
-                  "type:assets",
-                  "type:styles"
+                  "scope:shell"
                 ]
               },
               {
@@ -77,6 +75,7 @@
                 "onlyDependOnLibsWithTags": [
                   "scope:shell",
                   "scope:shared",
+                  "type:data-access",
                   "type:feature"
                 ]
               },

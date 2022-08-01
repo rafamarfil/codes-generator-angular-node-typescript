@@ -1,13 +1,13 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/shared/root/assets/src",
+  "sourceRoot": "libs/shared/ui/navbar/src",
   "prefix": "rvantravel",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/root/assets"],
+      "outputs": ["coverage/libs/shared/ui/navbar"],
       "options": {
-        "jestConfig": "libs/shared/root/assets/jest.config.ts",
+        "jestConfig": "libs/shared/ui/navbar/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -15,11 +15,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/root/assets/**/*.ts",
-          "libs/shared/root/assets/**/*.html"
+          "libs/shared/ui/navbar/**/*.ts",
+          "libs/shared/ui/navbar/**/*.html"
         ]
       }
     }
   },
-  "tags": ["scope:shared", "type:assets"]
+  "tags": ["scope:shared", "type:ui"]
 }
