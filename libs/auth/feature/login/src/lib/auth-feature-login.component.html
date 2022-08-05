@@ -5,70 +5,63 @@
 <div class="title">SIGN IN</div>
 
 <form [formGroup]="form" (ngSubmit)="form.valid && loginUser()">
-  <fieldset [disabled]="loader">
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input
-        matInput
-        type="email"
-        placeholder="Email"
-        formControlName="email"
-      />
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" placeholder="Email" formControlName="email" />
 
-      <mat-error
-        *ngIf="form.controls['email'].hasError('email')"
-        class="form-control-feedback"
-      >
-        Invalid Email
-      </mat-error>
-      <mat-error
-        *ngIf="form.controls['email'].hasError('required')"
-        class="form-control-feedback"
-      >
-        Email is required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input
-        matInput
-        type="password"
-        placeholder="Password"
-        formControlName="password"
-      />
-
-      <mat-error
-        *ngIf="form.controls['password'].hasError('required')"
-        class="form-control-feedback"
-      >
-        Password is required
-      </mat-error>
-    </mat-form-field>
-
-    <button type="submit" [disabled]="loader" mat-raised-button color="primary">
-      SIGN IN
-    </button>
-
-    <button
-      type="button"
-      mat-raised-button
-      color="primary"
-      (click)="googleAuth()"
+    <mat-error
+      *ngIf="form.controls['email'].hasError('email')"
+      class="form-control-feedback"
     >
-      <i class=""></i>
-      Log in with Google
-    </button>
+      Invalid Email
+    </mat-error>
+    <mat-error
+      *ngIf="form.controls['email'].hasError('required')"
+      class="form-control-feedback"
+    >
+      Email is required
+    </mat-error>
+  </mat-form-field>
 
-    <div class="forgot-password">
-      <span routerLink="/auth/forgot-password">Forgot Password?</span>
-    </div>
-  </fieldset>
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+
+    <mat-error
+      *ngIf="form.controls['password'].hasError('required')"
+      class="form-control-feedback"
+    >
+      Password is required
+    </mat-error>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="loader" mat-raised-button color="primary">
+    SIGN IN
+  </button>
+
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    (click)="googleAuth()"
+  >
+    <i class=""></i>
+    Log in with Google
+  </button>
+
+  <div class="forgot-password">
+    <a routerLink="/auth/forgot-password">Forgot Password?</a>
+  </div>
 </form>
 
 <div class="redirection">
-  <span class="text">Don't have an account?</span>
-  <a class="link" routerLink="/auth/register">Sign up</a>
+  <span>Don't have an account?</span>
+  <a class="signup" routerLink="/auth/register">Sign up</a>
 </div>
 
 <!-- <spinner [loader]="loader"></spinner> -->

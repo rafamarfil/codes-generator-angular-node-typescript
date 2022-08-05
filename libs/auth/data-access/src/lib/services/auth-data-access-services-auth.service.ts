@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Injectable, NgZone } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import * as auth from 'firebase/auth';
+import * as authh from 'firebase/auth';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -22,8 +22,7 @@ export class AuthDataAccessServicesAuthService {
     public afs: AngularFirestore,
     public ngZone: NgZone,
     public router: Router,
-    public snackBar: MatSnackBar,
-    private route: ActivatedRoute
+    public snackBar: MatSnackBar
   ) {
     this.auth.authState.subscribe((user) => {
       if (user) {
@@ -37,7 +36,7 @@ export class AuthDataAccessServicesAuthService {
     });
   }
 
-  get isLoggedIn(): boolean {
+  get isLoggedIn() {
     const user = JSON.parse(localStorage.getItem('user')!);
     if (user && !user.emailVerified) {
       this.snackBar.open(
@@ -50,6 +49,7 @@ export class AuthDataAccessServicesAuthService {
         }
       );
     }
+
     return !!(user && user.emailVerified);
   }
 
@@ -57,10 +57,9 @@ export class AuthDataAccessServicesAuthService {
     return this.auth
       .signInWithEmailAndPassword(email, password)
       .then((response: any) => {
-        console.log(response);
-        this.router.navigate(['booking']);
-        // this.ngZone.run(() => {
-        // });
+        this.ngZone.run(() => {
+          this.router.navigate(['booking']);
+        });
         this.setUserData(response.user);
       })
       .catch((error) => {
@@ -86,11 +85,19 @@ export class AuthDataAccessServicesAuthService {
   }
 
   googleAuth() {
-    return this.authLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      if (res) {
-        this.router.navigate(['booking']);
-      }
-    });
+    return this.auth
+      .signInWithPopup(new authh.GoogleAuthProvider())
+      .then((response) => {
+        if (response) {
+          this.ngZone.run(() => {
+            this.router.navigate(['booking']);
+          });
+          this.setUserData(response.user);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   register({ email, password }: LoginData) {
@@ -111,7 +118,7 @@ export class AuthDataAccessServicesAuthService {
   }
 
   logOut() {
-    return this.auth.signOut().then(() => {
+    this.auth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['auth']);
     });
@@ -158,19 +165,5 @@ export class AuthDataAccessServicesAuthService {
     return userRef.set(userData, {
       merge: true,
     });
-  }
-
-  private authLogin(provider: any) {
-    return this.auth
-      .signInWithPopup(provider)
-      .then((response) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['booking']);
-        });
-        this.setUserData(response.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
 }

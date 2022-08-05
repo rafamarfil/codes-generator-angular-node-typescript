@@ -67,7 +67,8 @@ export class AuthFeatureRegisterComponent implements OnInit, OnDestroy {
   }
 
   googleAuth() {
-    this.authService.googleAuth();
+    this.loader = true;
+    this.authService.googleAuth().then(() => (this.loader = false));
   }
 
   private initForm() {

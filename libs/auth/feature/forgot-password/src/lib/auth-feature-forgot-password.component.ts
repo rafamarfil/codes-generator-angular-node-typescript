@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access';
 
@@ -8,11 +9,37 @@ import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access'
   styleUrls: ['./auth-feature-forgot-password.component.scss'],
 })
 export class AuthFeatureForgotPasswordComponent implements OnInit {
-  constructor(public authService: AuthDataAccessServicesAuthService) {}
+  form!: FormGroup;
+  loader = false;
 
-  ngOnInit() {}
+  constructor(
+    public authService: AuthDataAccessServicesAuthService,
+    public formBuilder: FormBuilder
+  ) {}
 
-  forgotPassword(email: string) {
-    this.authService.forgotPassword(email);
+  ngOnInit() {
+    this.initForm();
+  }
+
+  forgotPassword() {
+    this.loader = true;
+    this.authService
+      .forgotPassword(this.form.value.email)
+      .then(() => (this.loader = false));
+  }
+
+  private initForm() {
+    this.form = this.formBuilder.group({
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern(
+            '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
+          ),
+        ],
+      ],
+    });
   }
 }

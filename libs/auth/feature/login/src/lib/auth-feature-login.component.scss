@@ -43,8 +43,19 @@ form {
   margin: 16px auto;
 }
 
+.forgot-password,
+.signup {
+  display: flex;
+  justify-content: center;
+  color: rgba(17, 75, 189, 0.824);
+}
+
 .forgot-password {
-  cursor: pointer;
+  margin-top: 25px;
+}
+
+.signup {
+  margin-top: 15px;
 }
 
 

@@ -17,8 +17,7 @@ export class AuthFeatureLoginComponent implements OnInit {
 
   constructor(
     private authService: AuthDataAccessServicesAuthService,
-    public formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    public formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {
@@ -31,7 +30,8 @@ export class AuthFeatureLoginComponent implements OnInit {
   }
 
   googleAuth() {
-    this.authService.googleAuth();
+    this.loader = true;
+    this.authService.googleAuth().then(() => (this.loader = false));
   }
 
   private initForm() {
