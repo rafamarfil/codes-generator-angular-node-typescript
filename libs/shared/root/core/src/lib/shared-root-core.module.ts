@@ -15,4 +15,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FlexLayoutModule,
   ],
 })
-export class SharedRootDataAccessModule {}
+export class SharedRootCoreModule {}

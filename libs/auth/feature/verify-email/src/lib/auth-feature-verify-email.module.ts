@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
+import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 import { AuthDataAccessModule } from '@rvantravel/auth/data-access';
 import { AuthFeatureVerifyEmailComponent } from './auth-feature-verify-email.component';
 
@@ -15,7 +15,7 @@ const AuthFeatureVerifyEmailRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(AuthFeatureVerifyEmailRoutes),
-    SharedRootDataAccessModule,
+    SharedRootCoreModule,
     AuthDataAccessModule,
   ],
   declarations: [AuthFeatureVerifyEmailComponent],

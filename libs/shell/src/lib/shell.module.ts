@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
+import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 import {
   SharedRootGuardAuthGuard,
   SharedRootGuardAuthModule,
@@ -58,7 +58,7 @@ const ShellRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(ShellRoutes),
-    SharedRootDataAccessModule,
+    SharedRootCoreModule,
     SharedRootGuardAuthModule,
     SharedUiNavbarModule,
   ],

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
+import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 
 import { SharedUiPageNotFoundComponent } from './shared-ui-page-not-found.component';
 
@@ -15,7 +15,7 @@ const SharedUiPageNotFoundRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(SharedUiPageNotFoundRoutes),
-    SharedRootDataAccessModule,
+    SharedRootCoreModule,
   ],
   declarations: [SharedUiPageNotFoundComponent],
 })

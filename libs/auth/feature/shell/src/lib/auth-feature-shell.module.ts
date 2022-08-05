@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
+import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 
 import { AuthFeatureShellComponent } from './auth-feature-shell.component';
 
@@ -50,7 +50,7 @@ const AuthFeatureShellRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(AuthFeatureShellRoutes),
-    SharedRootDataAccessModule,
+    SharedRootCoreModule,
   ],
   declarations: [AuthFeatureShellComponent],
 })

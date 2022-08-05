@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
+import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 import { SharedUiNavbarComponent } from './shared-ui-navbar.component';
 
 @NgModule({
-  imports: [SharedRootDataAccessModule],
+  imports: [SharedRootCoreModule],
   declarations: [SharedUiNavbarComponent],
   exports: [SharedUiNavbarComponent],
 })

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedRootDataAccessModule } from '@rvantravel/shared/root/data-access';
+import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 import { AuthDataAccessModule } from '@rvantravel/auth/data-access';
 
 import { AuthFeatureForgotPasswordComponent } from './auth-feature-forgot-password.component';
@@ -16,7 +16,7 @@ const AuthFeatureForgotPasswordRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(AuthFeatureForgotPasswordRoutes),
-    SharedRootDataAccessModule,
+    SharedRootCoreModule,
     AuthDataAccessModule,
   ],
   declarations: [AuthFeatureForgotPasswordComponent],
