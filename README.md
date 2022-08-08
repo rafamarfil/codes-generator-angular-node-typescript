@@ -1,6 +1,6 @@
 # Rvantravel
 
-WORKING IN PROGRESS
+WORK IN PROGRESS. Currently working on it, but this published version can be run.
 
 ## Development server
 
