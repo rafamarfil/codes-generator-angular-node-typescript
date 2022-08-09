@@ -1,2 +1,2 @@
 export * from './lib/shared-root-guard-auth.module';
-export * from './lib/shared-root-guard-auth.guard';
+export * from './lib/shared-root-guard-auth';

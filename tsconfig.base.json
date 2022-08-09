@@ -37,11 +37,12 @@
       "@rvantravel/booking/feature/shell": [
         "libs/booking/feature/shell/src/index.ts"
       ],
-      "@rvantravel/shared/root/core": [
-        "libs/shared/root/core/src/index.ts"
-      ],
+      "@rvantravel/shared/root/core": ["libs/shared/root/core/src/index.ts"],
       "@rvantravel/shared/root/guard/auth": [
         "libs/shared/root/guard/auth/src/index.ts"
+      ],
+      "@rvantravel/shared/root/interceptors": [
+        "libs/shared/root/interceptors/src/index.ts"
       ],
       "@rvantravel/shared/ui/navbar": ["libs/shared/ui/navbar/src/index.ts"],
       "@rvantravel/shared/ui/page-not-found": [

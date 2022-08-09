@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { SharedRootCoreModule } from '@rvantravel/shared/root/core';
 import {
   SharedRootGuardAuthGuard,
   SharedRootGuardAuthModule,
 } from '@rvantravel/shared/root/guard/auth';
 import { SharedUiNavbarModule } from '@rvantravel/shared/ui/navbar';
+import { SharedRootInterceptorsModule } from '@rvantravel/shared/root/interceptors';
 
 import { ShellComponent } from './shell.component';
 
@@ -58,10 +59,13 @@ const ShellRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(ShellRoutes),
-    SharedRootCoreModule,
+    HttpClientModule,
     SharedRootGuardAuthModule,
+    SharedRootInterceptorsModule,
+    SharedRootCoreModule,
     SharedUiNavbarModule,
   ],
   declarations: [ShellComponent],
+  providers: [],
 })
 export class ShellModule {}
