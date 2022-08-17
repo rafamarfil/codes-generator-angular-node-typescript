@@ -75,7 +75,6 @@
                 "onlyDependOnLibsWithTags": [
                   "scope:shell",
                   "scope:shared",
-                  "type:data-access",
                   "type:feature"
                 ]
               },

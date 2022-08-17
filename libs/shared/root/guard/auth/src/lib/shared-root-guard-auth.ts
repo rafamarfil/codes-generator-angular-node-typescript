@@ -6,7 +6,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SharedRootGuardAuthGuard implements CanLoad {
   constructor(
     public authService: AuthDataAccessServicesAuthService,

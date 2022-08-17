@@ -13,7 +13,9 @@ import {
 import { LoginData } from '../models/login-data.interface';
 import { User } from '../models/user.interface';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthDataAccessServicesAuthService {
   userData: any;
 
