@@ -57,9 +57,9 @@
                 ]
               },
               {
-                "sourceTag": "scope:booking",
+                "sourceTag": "scope:coupons",
                 "onlyDependOnLibsWithTags": [
-                  "scope:booking",
+                  "scope:coupons",
                   "scope:shared"
                 ]
               },
@@ -75,7 +75,8 @@
                 "onlyDependOnLibsWithTags": [
                   "scope:shell",
                   "scope:shared",
-                  "type:feature"
+                  "type:feature",
+                  "type:data-access"
                 ]
               },
               {
