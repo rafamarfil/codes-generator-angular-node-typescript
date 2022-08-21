@@ -1,8 +1,13 @@
-# Rvantravel
-
-WORK IN PROGRESS. Currently working on it, but this published version can be run.
+# Coupons generator
 
 ## Development server
+
+### Run server
+
+Go to server folder `cd server` and run `npm run serve`.
+The server will start at port 8000.
+
+### Run client
 
 Run `npm start` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 

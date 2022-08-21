@@ -1,5 +1,33 @@
-<div style="text-align: center">
-  <ul>
-    <li *ngFor="let item of coupons">{{ item }}</li>
-  </ul>
+<div class="coupons-wrapper">
+  <h2>Coupons generator</h2>
+  <div class="coupons">
+    <div class="coupons--side">
+      <h3>Choose the coupon generator type</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>Coupons configuration</mat-label>
+        <mat-select [(value)]="selectedCouponsConfig">
+          <mat-option
+            [value]="option.value"
+            *ngFor="let option of couponsConfig"
+            (click)="selectCouponConfiguration()"
+            >{{ option.viewValue }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="coupons--side">
+      <div class="coupons-details">
+        <span class="coupons-details--title"> Generator type: </span>
+        <span> {{ configData.algorithm }} coupons</span>
+      </div>
+      <div class="coupons-details">
+        <span class="coupons-details--title"> Amount of coupons: </span>
+        <span>{{ configData.amount }}</span>
+      </div>
+      <h3>Coupons list</h3>
+      <ul>
+        <li *ngFor="let item of coupons">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
 </div>
