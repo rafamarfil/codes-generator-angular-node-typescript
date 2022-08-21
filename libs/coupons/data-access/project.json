@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/coupons/data-access/src",
+  "prefix": "rvantravel",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/coupons/data-access"],
+      "options": {
+        "jestConfig": "libs/coupons/data-access/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/coupons/data-access/**/*.ts",
+          "libs/coupons/data-access/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

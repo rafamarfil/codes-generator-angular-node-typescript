@@ -31,6 +31,9 @@
       "@rvantravel/auth/feature/verify-email": [
         "libs/auth/feature/verify-email/src/index.ts"
       ],
+      "@rvantravel/coupons/data-access": [
+        "libs/coupons/data-access/src/index.ts"
+      ],
       "@rvantravel/coupons/feature/generator": [
         "libs/coupons/feature/generator/src/index.ts"
       ],
