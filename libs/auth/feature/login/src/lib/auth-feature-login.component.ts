@@ -36,7 +36,7 @@ export class AuthFeatureLoginComponent implements OnInit {
   private initForm() {
     this.form = this.formBuilder.group({
       email: [
-        'rvantravel@gmail.com',
+        '',
         [
           Validators.required,
           Validators.email,
@@ -45,7 +45,7 @@ export class AuthFeatureLoginComponent implements OnInit {
           ),
         ],
       ],
-      password: ['78Rafalote82#', Validators.required],
+      password: ['', Validators.required],
     });
   }
 }
