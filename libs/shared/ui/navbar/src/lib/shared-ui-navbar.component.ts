@@ -8,23 +8,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class SharedUiNavbarComponent {
   @Output() logout = new EventEmitter<boolean>();
 
-  username = 'Rafa';
+  username = 'User';
 
   onLogout() {
     this.logout.emit(true);
-  }
-
-  onFullscreenToggle() {
-    const elem = <any>document.querySelector('.coupons');
-
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullScreen) {
-      elem.webkitRequestFullScreen();
-    } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen();
-    } else if (elem.msRequestFullScreen) {
-      elem.msRequestFullScreen();
-    }
   }
 }
