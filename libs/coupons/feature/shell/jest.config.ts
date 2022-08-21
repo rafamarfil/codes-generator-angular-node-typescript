@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'booking-feature-flight-search',
+  displayName: 'coupons-feature-shell',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/booking/feature/flight-search',
+  coverageDirectory: '../../../../coverage/libs/coupons/feature/shell',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

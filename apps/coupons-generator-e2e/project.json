@@ -1,17 +1,17 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/booking-travel-e2e/src",
+  "sourceRoot": "apps/coupons-generator-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/booking-travel-e2e/cypress.json",
-        "devServerTarget": "booking-travel:serve:development"
+        "cypressConfig": "apps/coupons-generator-e2e/cypress.json",
+        "devServerTarget": "coupons-generator:serve:development"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "booking-travel:serve:production"
+          "devServerTarget": "coupons-generator:serve:production"
         }
       }
     },
@@ -22,13 +22,13 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/booking-travel-e2e/**/*.{js,ts}"
+          "apps/coupons-generator-e2e/**/*.{js,ts}"
         ]
       }
     }
   },
   "tags": [],
   "implicitDependencies": [
-    "booking-travel"
+    "coupons-generator"
   ]
 }

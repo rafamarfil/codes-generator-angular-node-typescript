@@ -60,7 +60,7 @@ export class AuthDataAccessServicesAuthService {
       .signInWithEmailAndPassword(email, password)
       .then((response: any) => {
         this.ngZone.run(() => {
-          this.router.navigate(['booking']);
+          this.router.navigate(['dashboard']);
         });
         this.setUserData(response.user);
       })
@@ -92,7 +92,7 @@ export class AuthDataAccessServicesAuthService {
       .then((response) => {
         if (response) {
           this.ngZone.run(() => {
-            this.router.navigate(['booking']);
+            this.router.navigate(['dashboard']);
           });
           this.setUserData(response.user);
         }

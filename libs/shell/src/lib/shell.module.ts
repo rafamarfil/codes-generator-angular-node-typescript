@@ -25,19 +25,19 @@ const ShellRoutes: Routes = [
       ),
   },
   {
-    path: 'booking',
+    path: 'dashboard',
     component: ShellComponent,
     children: [
       {
         path: '',
-        redirectTo: 'flight-search',
+        redirectTo: 'coupons',
         pathMatch: 'full',
       },
       {
-        path: 'flight-search',
+        path: 'coupons',
         loadChildren: () =>
-          import('@rvantravel/booking/feature/shell').then(
-            (m) => m.BookingFeatureShellModule
+          import('@rvantravel/coupons/feature/shell').then(
+            (m) => m.CouponsFeatureShellModule
           ),
         canLoad: [SharedRootGuardAuthGuard],
       },

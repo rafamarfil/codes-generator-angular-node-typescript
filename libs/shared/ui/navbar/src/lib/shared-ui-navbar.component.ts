@@ -15,7 +15,7 @@ export class SharedUiNavbarComponent {
   }
 
   onFullscreenToggle() {
-    const elem = <any>document.querySelector('.booking');
+    const elem = <any>document.querySelector('.coupons');
 
     if (elem.requestFullscreen) {
       elem.requestFullscreen();

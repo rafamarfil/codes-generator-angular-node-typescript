@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AuthDataAccessServicesAuthService } from '@rvantravel/auth/data-access';
 
 @Component({
-  selector: 'rvantravel-booking',
+  selector: 'rvantravel-coupons',
   templateUrl: './shell.component.html',
 })
 export class ShellComponent {

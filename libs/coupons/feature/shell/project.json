@@ -1,13 +1,13 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/booking/feature/shell/src",
+  "sourceRoot": "libs/coupons/feature/shell/src",
   "prefix": "rvantravel",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/booking/feature/shell"],
+      "outputs": ["coverage/libs/coupons/feature/shell"],
       "options": {
-        "jestConfig": "libs/booking/feature/shell/jest.config.ts",
+        "jestConfig": "libs/coupons/feature/shell/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -15,11 +15,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/booking/feature/shell/**/*.ts",
-          "libs/booking/feature/shell/**/*.html"
+          "libs/coupons/feature/shell/**/*.ts",
+          "libs/coupons/feature/shell/**/*.html"
         ]
       }
     }
   },
-  "tags": ["scope:booking", "type:feature"]
+  "tags": ["scope:coupons", "type:feature"]
 }

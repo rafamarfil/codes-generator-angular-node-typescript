@@ -31,11 +31,11 @@
       "@rvantravel/auth/feature/verify-email": [
         "libs/auth/feature/verify-email/src/index.ts"
       ],
-      "@rvantravel/booking/feature/flight-search": [
-        "libs/booking/feature/flight-search/src/index.ts"
+      "@rvantravel/coupons/feature/generator": [
+        "libs/coupons/feature/generator/src/index.ts"
       ],
-      "@rvantravel/booking/feature/shell": [
-        "libs/booking/feature/shell/src/index.ts"
+      "@rvantravel/coupons/feature/shell": [
+        "libs/coupons/feature/shell/src/index.ts"
       ],
       "@rvantravel/shared/root/core": ["libs/shared/root/core/src/index.ts"],
       "@rvantravel/shared/root/guard/auth": [

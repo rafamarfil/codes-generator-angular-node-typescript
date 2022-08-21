@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'booking-travel',
+  displayName: 'coupons-generator',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/booking-travel',
+  coverageDirectory: '../../coverage/apps/coupons-generator',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
